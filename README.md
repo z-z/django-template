@@ -68,6 +68,11 @@ cd project
 
 - Перезапускаем nginx и готово.
 
+_Если не заработает, запускаем в консоли команду для перезапуска uwsgi_
+```bash
+/usr/local/bin/uwsgi --emperor /etc/uwsgi/vassals --uid www-data --gid www-data --daemonize /var/log/uwsgi-emperor.log --pidfile /tmp/uwsgi.pid
+```
+
 __При такой настройке после перезагрузки сервера приложения будут слетать и их надо запускать вручную. Чтобы так не надо было делать, в файл /etc/rc.local, перед строкой “exit 0” добавляем:__
 
 ```bash
